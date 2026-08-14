@@ -13,17 +13,20 @@ If you were dispatched as a subagent to execute a specific task, ignore this ski
 
 1.1 Read `docs/whalekit/COMMIT-POLICY.md` if it exists in the workspace before writing any process artifact.
 
-1.2 Classify the request: trivial (mechanical, single line) or non-trivial.
+1.2 Classify the request before anything else:
 
-1.3 Non-trivial requests → invoke `targeted-exploration` before any further skill.
+  1. **Pure question** — the user asks for explanation, reasons, feasibility, or an opinion (e.g. "why does X do Y?", "is X feasible?", "what do you think?"), with no implementation directive and no request to change anything. Answer directly. Do NOT start the artifact chain, do NOT run `targeted-exploration`'s ceremony, and do NOT implement or offer to implement (a brief offer to help later is allowed, but never with chain questions attached).
+  2. **Task** — the user requests or implies a change (imperative: add/fix/change/implement, or an explicit request to do work). Tasks are trivial (mechanical, single line) or non-trivial.
 
-1.4 Trivial requests → enter the artifact chain at Q1 (§2) — answering 'no' to Q1 is the L1 entry for non-mechanical tasks; verified one-line mechanical fixes use the L1 fast path (§2.2).
+1.3 Non-trivial task requests → invoke `targeted-exploration` before any further skill.
+
+1.4 Trivial task requests → enter the artifact chain at Q1 (§2) — answering 'no' to Q1 is the L1 entry for non-mechanical tasks; verified one-line mechanical fixes use the L1 fast path (§2.2).
 
 1.5 Invoke `whalekit-conventions` immediately after this skill. Its sections are the canonical wording for all rules below; where this skill and conventions differ, conventions win. The conventions skill binds every agent — including subagents; do not skip it when dispatching work.
 
 ## 2. Artifact Chain
 
-For any task that is not a verified one-line mechanical fix, ask the process-depth questions ONE AT A TIME, in order, waiting for each answer:
+For any **task** that is not a verified one-line mechanical fix, ask the process-depth questions ONE AT A TIME, in order, waiting for each answer. Pure questions (classification §1.2.1) never enter the chain — answer them directly and stop.
 
 Q1 — "这个任务需要编写 Memo（设计小记，记录设计决策）吗？" (no → L1, implement directly)
 
@@ -53,11 +56,11 @@ The tier reached is where the chain stopped; the gating table applies at that ti
 
 A task started without answering the artifact-chain questions at any depth above L1 is a violation of this skill.
 
-**Definition:** a non-trivial task whose process-depth questions (Q1–Q4) were never asked or answered (absent an explicit 'skip the menu' waiver).
+**Definition:** a non-trivial task whose process-depth questions (Q1–Q4) were never asked or answered (absent an explicit 'skip the menu' waiver). Pure questions (§1.2.1) are not tasks and never trigger this gate.
 
 **Obligation:** before touching any implementation, ask the chain questions (Q1–Q4), one at a time, and wait for the user's explicit answer.
 
-**Exception:** the user explicitly says "skip the menu" for a specific task.
+**Exception:** the user explicitly says "skip the menu" for a specific task. A pure question is not a task — answer it directly without the chain.
 
 ## 4. Parking Notice
 

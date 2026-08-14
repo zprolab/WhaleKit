@@ -27,6 +27,8 @@ description: Use when selecting process depth for a task
 
 ## 3. Recommendation Duty
 
+3.0 **Pure questions never enter routing.** A request that asks for explanation, reasons, feasibility, or an opinion — with no implementation directive and no request to change anything (e.g. "why does X do Y?", "is X feasible?", "what do you think?") — is answered directly and stops. Do NOT present the artifact chain, do NOT run the tier menu, do NOT run `targeted-exploration`'s ceremony, and do NOT implement or offer to implement (a brief offer to help later is allowed, but never with chain questions attached). Only a request that is or implies a change is a task and enters routing.
+
 3.1 Recommend a tier from the targeted-exploration report — never on impression. Trivial, one-line changes map to L1 with the least ceremony.
 
 3.1a **L1 fast path.** A verified one-line mechanical fix maps to L1 and is confirmed with a single sentence offering the L1 pick (e.g. "That reads as L1 — one-line fix; proceed?"), not a full menu. The full 2–3-option menu remains available on request and is mandatory whenever the fix is not verified-mechanical or the user wants more. "Verified-mechanical" means exactly one line, no interface touched, no ambiguity — when in doubt, the menu applies. The carve-out is not gated (§5 Definition), so after a single unanswered re-ask the fix may proceed.
@@ -34,7 +36,8 @@ description: Use when selecting process depth for a task
 3.1b **Escape hatch.** Every tier-menu presentation ends with the escape hatch, verbatim: *"If you want me to skip the process questions for this task, say 'skip the menu'; otherwise answer them one at a time."* An explicit skip is the user's waiver (HARD-GATE Exception, §5); honor it without skepticism.
 
 3.2 **Artifact chain.** For any task that is not a verified one-line mechanical fix, ask the
-    process-depth questions ONE AT A TIME, in order, waiting for each answer:
+    process-depth questions ONE AT A TIME, in order, waiting for each answer (pure questions
+    per §3.0 never enter the chain):
     Q1 — "这个任务需要编写 Memo（设计小记，记录设计决策）吗？" (no → L1, implement directly)
     Q2 — "需要编写 Spec（设计规格，把设计定稿为可审阅文档）吗？" (no → L2)
     Q3 — "需要编写 Plan（实现计划，给执行者的任务分解）吗？" (no → L3)
@@ -60,11 +63,11 @@ canonical: `whalekit-conventions` §2.
 
 Implementing a non-trivial task without the artifact chain answered or skipped is a violation of this skill.
 
-**Definition:** a non-trivial task — anything beyond a one-line mechanical fix — on which implementation work begins before the user has answered the artifact-chain questions (Q1–Q4) or explicitly skipped them ("skip the menu").
+**Definition:** a non-trivial task — anything beyond a one-line mechanical fix — on which implementation work begins before the user has answered the artifact-chain questions (Q1–Q4) or explicitly skipped them ("skip the menu"). Pure questions (§3.0) are not tasks and never trigger this gate.
 
 **Obligation:** before any implementation of a non-trivial task, ask the artifact-chain questions (§3.2) ONE AT A TIME and wait for each answer; recommend from a targeted-exploration report, never on impression. For the one-line-mechanical-fix carve-out, use the L1 fast path (§3.1a): a single confirmation, never silence and never a menu.
 
-**Exception:** the user explicitly waives the process questions for the task — including the escape-hatch phrase "skip the menu" (§3.1b), which is honored without skepticism.
+**Exception:** the user explicitly waives the process questions for the task — including the escape-hatch phrase "skip the menu" (§3.1b), which is honored without skepticism. A pure question is not a task — answer it directly without the chain.
 
 ## 6. Parking Notice
 
