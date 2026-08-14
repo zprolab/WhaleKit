@@ -2,7 +2,8 @@
 # WhaleKit entry smoke test — automates FINAL-VALIDATION checkpoint 1.
 # (a) installs the skills into a temp target, (b) asserts every SKILL.md
 # frontmatter is parseable per DSH rules, (c) asserts the entry skill
-# (using-whalekit) is present and discoverable in the installed catalog.
+# (using-whalekit) and whalekit-conventions are present and discoverable
+# in the installed catalog.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TMP="$(mktemp -d)"
@@ -33,9 +34,16 @@ if [ -f "$ENTRY" ]; then
     echo "FAIL(entry-description-unquoted-colon)"; fail=1
   fi
 fi
+# Assert whalekit-conventions is present in the installed catalog (19 skills).
+CONV="$TMP/.dsh/skills/whalekit-conventions/SKILL.md"
+if [ ! -f "$CONV" ]; then echo "FAIL(conventions-missing): $CONV"; fail=1; fi
+if [ -f "$CONV" ]; then
+  conv_name=$(awk -F': ' '/^name:/{print $2; exit}' "$CONV")
+  if [ "$conv_name" != "whalekit-conventions" ]; then echo "FAIL(conventions-name): '$conv_name'"; fail=1; fi
+fi
 
 if [ $fail -eq 0 ]; then
-  echo "ENTRY SMOKE OK (${installed}/${expected} skills installed; entry discoverable)"
+  echo "ENTRY SMOKE OK (${installed}/${expected} skills installed; entry and conventions discoverable)"
   exit 0
 fi
 echo "ENTRY SMOKE FAILED"; exit 1
