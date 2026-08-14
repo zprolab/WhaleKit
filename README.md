@@ -79,7 +79,7 @@ memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records a
 
 ## Skill Inventory
 
-20 skills (7 original + 12 adapted + 1 parked). Adapted skills retain their
+20 skills (7 original + 13 adapted). Adapted skills retain their
 `Adapted from obra/superpowers (MIT)` header; see individual `SKILL.md` headers for attribution.
 
 | Skill | Source |
@@ -103,7 +103,7 @@ memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records a
 | `executing-plans` | adapted — from obra/superpowers |
 | `subagent-driven-development` | adapted — from obra/superpowers |
 | `writing-skills` | adapted — from obra/superpowers (skill TDD) |
-| `dispatching-parallel-agents` | **parked** (`metadata.status: useless-now`) — catalog-visible, never triggered |
+| `dispatching-agents` | adapted — from obra/superpowers (generic delegation protocol; re-scoped 2026-08-14 from the parked parallel clone) |
 
 ## Design Philosophy
 
