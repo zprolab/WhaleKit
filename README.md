@@ -22,7 +22,7 @@ From the repository root, run the installer:
 ./install.sh --uninstall     # remove every WhaleKit skill symlink (works with --project too)
 ```
 
-- **Default**: symlinks all 18 skills into `$DSH_HOME/skills` (defaults to `~/.dsh/skills`).
+- **Default**: symlinks all 19 skills into `$DSH_HOME/skills` (defaults to `~/.dsh/skills`).
 - **`--project`**: symlinks into `<projectRoot>/.dsh/skills`, which DSH ranks above the home root.
 - **`--uninstall`**: removes every WhaleKit symlink and the emptied target directory.
 - Options are order-independent (`install.sh --uninstall --project` behaves identically).
@@ -32,10 +32,12 @@ so a project-local install takes precedence over a global one.
 
 ### 2. First session
 
-`using-whalekit` is the **entry skill**: it must be invoked at the start of any conversation. When you
-begin a task, WhaleKit will classify it (trivial vs non-trivial), run `targeted-exploration` if needed,
-recommend a routing tier, and present **2–3 tier options** for you to choose. The user's decision is the
-highest authority below the system prompt — the agent never picks the tier alone.
+`using-whalekit` is the **entry skill**: it must be invoked at the start of any conversation. After
+`using-whalekit`, invoke `whalekit-conventions` (mandatory) — the canonical global-conventions skill
+that binds every agent, including subagents, before any task work begins. When you begin a task,
+WhaleKit will classify it (trivial vs non-trivial), run `targeted-exploration` if needed, recommend a
+routing tier, and present **2–3 tier options** for you to choose. The user's decision is the highest
+authority below the system prompt — the agent never picks the tier alone.
 
 ## The Five Tiers
 
@@ -72,12 +74,13 @@ Session start → using-whalekit (mandatory entry)
 
 ## Skill Inventory
 
-18 skills (5 original + 12 adapted + 1 parked). Adapted skills retain their
+19 skills (6 original + 12 adapted + 1 parked). Adapted skills retain their
 `Adapted from obra/superpowers (MIT)` header; see individual `SKILL.md` headers for attribution.
 
 | Skill | Source |
 |---|---|
 | `using-whalekit` | **original** — entry skill, routing startup |
+| `whalekit-conventions` | **original** — canonical global conventions binding all agents |
 | `targeted-exploration` | **original** — anti-divergence exploration feeding routing |
 | `routing` | **original** — five tiers, gating, one-way ratchet |
 | `adversarial-review` | **original** — red/blue/black meta-skill (decision + review modes) |
@@ -133,7 +136,7 @@ exempted from by a `<SUBAGENT-STOP>` block) and any skill requiring live user in
 
 ## Roadmap
 
-- **v0.1 (current):** DSH-only, coding domain, 18 skills, five-tier routing.
+- **v0.1 (current):** DSH-only, coding domain, 19 skills, five-tier routing.
 - **v0.2 (planned — 2026-08-14 decision):** multi-runtime planning. DSH-only is a concentration risk (SuperPowers ports to many harnesses); evaluate adapting the skill set to other harnesses to reduce single-runtime exposure. Scope and timeline TBD by a spec-level decision.
 
 ## License
