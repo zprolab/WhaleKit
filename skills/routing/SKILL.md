@@ -37,6 +37,8 @@ description: Use when selecting process depth for a task
 
 3.1b **Escape hatch.** Every tier-menu presentation ends with the escape hatch, verbatim: *"If you want me to skip the process questions for this task, say 'skip the menu'; otherwise answer them one at a time."* An explicit skip is the user's waiver (HARD-GATE Exception, §5); honor it without skepticism.
 
+3.1c **Waived tier choice → decision-approval.** If the user waives picking the tier too ("你定吧/都行/你选"), do not silently pick one: follow `decision-approval` — present a tier draft sheet (recommended tier + one-line rationale + 1–2 alternative tiers with their cost + confidence, labeled 草案/待批准) and proceed only after approval. Silence is not approval; under explicit full delegation, record the chosen tier as an assumption.
+
 3.2 **Artifact chain.** For any task that is not a verified one-line mechanical fix, ask the
     process-depth questions ONE AT A TIME, in order, waiting for each answer (pure questions
     per §3.0 never enter the chain). For tasks that begin with creative or design work —
