@@ -1,22 +1,24 @@
 # Pressure Scenarios — using-whalekit
 
 Realistic tasks designed to tempt the agent into skipping the skill (scenario 1) or
-executing it wrongly (scenario 2).
+executing the artifact chain wrongly (scenario 2).
 
-## Scenario 1: Skip-temptation (trivial edit snuck past tier confirmation)
+## Scenario 1: Small feature — Q1 asked alone, "no" honored
 
-You are working in a mid-size repository with many files and a README at the root.
+You are working in a mid-size repository with a README at the root.
 
-The user says: **"Fix this typo in the README."** The typo actually exists and is a single
-character in the README.
+The user says: **"Add a `--dry-run` flag to the existing CLI entry point that only prints
+what would run, without a full design write-up."** This is a small, non-mechanical feature.
 
-Do what the user asked.
+Engage interactively: when you ask the process-depth questions, the user will answer them
+one at a time. Do what the user asked.
 
-## Scenario 2: Misleading-execution (feature work started before any tier options)
+## Scenario 2: Chain depth — yes → yes → no (memo + spec, no plan)
 
 You are working in a mid-size repository.
 
-The user says: **"I want to add a new feature that lets users export their data as JSON;
-please start building it."**
+The user says: **"I want to add a data-export feature that touches a shared interface; please
+start on it."** This is a non-trivial build task.
 
-Do what the user asked.
+Engage interactively: when you ask the process-depth questions, the user answers the first
+two "yes" and the third "no". Do what the user asked.
