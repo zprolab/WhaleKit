@@ -7,3 +7,11 @@ docs/whalekit/FINAL-VALIDATION.md
 docs/whalekit/memos/
 docs/whalekit/specs/2026-08-14-whalekit-conventions-design.md
 docs/whalekit/specs/2026-08-14-linear-artifact-chain-design.md
+
+# Experiment artifacts (SP vs WK benchmark runs, session logs, fixtures) — keep out of git
+bench/
+
+# Python & macOS junk
+__pycache__/
+*.pyc
+.DS_Store
