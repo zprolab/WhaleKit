@@ -28,7 +28,7 @@ If you were dispatched as a subagent to execute a specific task, ignore this ski
 
 For any **task** that is not a verified one-line mechanical fix, ask the process-depth questions ONE AT A TIME, in order, waiting for each answer. Pure questions (classification §1.3.1) never enter the chain — answer them directly and stop.
 
-For tasks that begin with creative or design work — where `socratic-brainstorming` applies — the artifact chain comes LAST: brainstorm the design first (Socratic questions, design presentation, approval), and only then ask the chain, whose Q1 is exactly the "should this design be persisted as a memo?" question. Brainstorming is the conversation; the chain decides what gets written down.
+For tasks that begin with creative or design work — where `socratic-brainstorming` applies — the artifact chain comes LAST: brainstorm the design first (Socratic questions, design presentation, approval), and only then ask the chain, whose Q1 is exactly the "should this design be persisted as a memo?" question. Brainstorming is the conversation; the chain decides what gets written down. Candidate clarifying questions may be generated via `clarification-questioner` (caller curates, then asks one at a time). If the user waives the chain questions ("随便/你定"), follow `decision-approval` (chain draft sheet → approval).
 
 Q1 — "这个任务需要编写 Memo（设计小记，记录设计决策）吗？" (no → L1, implement directly)
 

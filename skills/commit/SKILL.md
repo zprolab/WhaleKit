@@ -28,7 +28,7 @@ Two duties, one skill. Before implementation begins, ask the commit strategy. Wh
   - **incremental** — commit after each logical unit completes, during implementation.
   - **final** — commit everything at the end, still grouped by logic.
 
-1.4 If the user already declared the commit strategy for this task or session, do not re-ask; use the declared strategy.
+1.4 If the user already declared the commit strategy for this task or session, do not re-ask; use the declared strategy. If the user waives the strategy question ("你看着办/都行"), follow `decision-approval`: present a commit-plan draft sheet (proposed logical commit groups + messages, labeled 草案/待批准) and commit only after approval.
 
 <HARD-GATE>
 **Definition:** starting implementation on a task — touching any file for the task — before the commit strategy question was asked and answered, absent an explicit waiver.

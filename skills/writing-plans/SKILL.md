@@ -172,6 +172,8 @@ After saving the plan, offer execution choice:
 
 **Which approach?"**
 
+**If the user waives the handoff choice** ("都行/你定"), follow `decision-approval`: present a handoff draft sheet (recommended approach + rationale + alternative + confidence, labeled 草案/待批准) and proceed only after approval.
+
 **If Subagent-Driven chosen:**
 - **REQUIRED SUB-SKILL:** Use whalekit:subagent-driven-development
 - Fresh subagent per task + two-stage review

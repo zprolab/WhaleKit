@@ -29,6 +29,8 @@ When in doubt between two paths, take the heavier one. The ratchet is one-way: h
 
 1.4 Focus every question on the things the agent cannot infer: purpose, constraints, success criteria, and the decisions that shape the design. Do not ask about facts recoverable from research (section 2).
 
+1.5 **Candidate generation may be delegated.** When a batch candidate list is useful before the dialogue (e.g., a caller curates questions for a subagent workflow), generate it via `clarification-questioner` (identity + project context → candidate list); the caller filters and adds, then this skill's one-at-a-time dialogue (§1.2) asks them.
+
 ## 2. Project Research
 
 2.1 While questioning, research the existing code, docs, and recent commits in parallel — check files, documentation, and git history before proposing anything.
@@ -77,7 +79,7 @@ No implementation skill, code, or scaffolding before the user approves the desig
 
 **Obligation:** present the design (or probe plan) to the user, wait for explicit approval, and begin implementation only after that approval. The ceremony scales with the task; the approval gate never does.
 
-**Exception:** the user explicitly waives approval for the task.
+**Exception:** the user explicitly waives approval for the task — the waiver follows `decision-approval`: produce a design decision draft sheet and proceed only after approval; silence is not approval.
 
 ## Red Flags
 
