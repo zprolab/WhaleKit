@@ -19,6 +19,8 @@ If you were dispatched as a subagent to execute a specific task, ignore this ski
 
 1.4 Trivial requests → proceed directly to tier selection (the L1 fast path, §2.2).
 
+1.5 Invoke `whalekit-conventions` immediately after this skill. Its sections are the canonical wording for all rules below; where this skill and conventions differ, conventions win. The conventions skill binds every agent — including subagents; do not skip it when dispatching work.
+
 ## 2. Tier Selection
 
 | Tier | Process | Trigger signals (from exploration report) |
@@ -55,4 +57,4 @@ A task started without tier selection at any tier above L1 is a violation of thi
 
 ## 4. Parking Notice
 
-4.1 Skills with `metadata.status: useless-now` are never triggered or recommended, until the status is flipped by a spec-level decision.
+Parked skills (`metadata.status: useless-now`) are never triggered or recommended — canonical: `whalekit-conventions` §5.
