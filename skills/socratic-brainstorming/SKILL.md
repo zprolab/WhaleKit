@@ -14,8 +14,8 @@ Turn ideas into fully formed designs through Socratic questioning, project resea
 Before your first question, classify the request and say the classification out loud — "this looks bounded, so I'll present a short design here rather than write a spec" — so your human partner can override it. Classify, announce, then question.
 
 - **Spike** — a feasibility question ("can we...", "is it possible...", "quick and dirty is fine") whose output is an answer, not code you keep. Present the question and what you'll try in 2-3 sentences, get a nod, then find out as cheaply as correctness allows. No design memo, no spec file. Report findings as a recommendation; anything you built stays labeled throwaway.
-- **Bounded** — a well-scoped change to code that already exists in this repo: a new flag, a small endpoint, a one-file fix. Understanding the kind of app is not enough — bounded means the flow you are changing is already here to read. If there is no existing flow to change, the task is not bounded. Ask the clarifying questions that matter, present a short design IN CHAT (a few sentences to a few short paragraphs), and STOP. Implementation starts only after your human partner says yes to that design — a bounded task's approval is as hard a gate as an architectural one. Write the design memo to disk. No spec file, no implementation plan document.
-- **Architectural** — new projects, new subsystems, changes that restructure how components fit together or alter interfaces others depend on. Follow the full process: questions, approaches, sectioned design, written memo, then written spec for the higher tiers.
+- **Bounded** — a well-scoped change to code that already exists in this repo: a new flag, a small endpoint, a one-file fix. Understanding the kind of app is not enough — bounded means the flow you are changing is already here to read. If there is no existing flow to change, the task is not bounded. Ask the clarifying questions that matter, present a short design IN CHAT (a few sentences to a few short paragraphs), and STOP. Implementation starts only after your human partner says yes to that design — a bounded task's approval is as hard a gate as an architectural one. Then ask whether to persist the design as a memo (artifact-chain Q1); write it only on consent. No spec file, no implementation plan document.
+- **Architectural** — new projects, new subsystems, changes that restructure how components fit together or alter interfaces others depend on. Follow the full process: questions, approaches, sectioned design, written memo, then written spec for the higher tiers. The memo is written only on the user's consent (artifact-chain Q1); the spec follows the artifact chain (Q2) at the higher tiers.
 
 When in doubt between two paths, take the heavier one. The ratchet is one-way: hidden complexity discovered mid-task upgrades the path — stop, say so, and step up. Nothing downgrades mid-task.
 
@@ -49,7 +49,7 @@ When in doubt between two paths, take the heavier one. The ratchet is one-way: h
 
 ## 4. Memo Persistence
 
-4.1 Once the user approves the design, write the design memo to `docs/whalekit/memos/YYYY-MM-DD-<topic>.md`. The memo is the tier-L2 artifact: the first persistable record of the design.
+4.1 Once the user approves the design, ASK whether to persist it as a design memo — this is the artifact-chain Q1 ("这个任务需要编写 Memo 吗？"). Brainstorming is the conversation; persistence is a separate decision the user makes AFTER the conversation. Write the memo to `docs/whalekit/memos/YYYY-MM-DD-<topic>.md` only on the user's consent; never write it automatically upon approval. The memo is the tier-L2 artifact: the first persistable record of the design.
 
 4.2 The memo is superseded by later artifacts (spec at tier L3, plan at tier L4, dual records at tier L5) but is never deleted. It survives next to the spec and the plan, preserving full traceability per the document golden-standard chain (§7.7).
 
@@ -84,7 +84,8 @@ No implementation skill, code, or scaffolding before the user approves the desig
 | Thought | Reality |
 |---------|---------|
 | "This is too simple to need a design" | Simple means a short design, not no design. Two sentences in chat, then approval. |
-| "I'll call it bounded and skip the memo" | Bounded work still persists its design memo to disk and still needs approval. |
+| "I'll call it bounded and skip the memo" | Bounded work still asks whether to persist the memo and needs approval — persistence is the user's call, not yours to skip. |
+| "Approval means the memo is approved too — I'll write it" | Approval approves the design, not the persistence. Ask whether to persist (artifact-chain Q1) before writing anything. |
 | "I'll start while they read the memo" | The gate is the approval, not the memo's length. Present, then stop until you hear yes. |
 | "I understand this kind of app, so it's bounded" | Bounded measures the repo, not your familiarity. A new project has no existing flow — it is architectural. |
 | "The spike works, so I'll keep the code" | A spike's output is an answer. Keeping the code is a new request — classify it. |
@@ -108,16 +109,18 @@ Classify first, announce the path, then complete the items on your path in order
 2. **Ask clarifying questions** — one at a time, multiple choice preferred
 3. **Present short design in chat** — approach, files touched, testing
 4. **Get approval** — STOP and wait for an explicit yes
-5. **Check commit consent** — read `docs/whalekit/COMMIT-POLICY.md`; memos are recorded (never — the entire directory is ignored); honor the recorded decision without re-asking
-6. **Write design memo** — to `docs/whalekit/memos/YYYY-MM-DD-<topic>.md`; never delete after superseding
-7. **Implement** — proceed with the normal development workflow (TDD applies); no plan document
+5. **Ask whether to persist the design as a memo** — artifact-chain Q1; write only on consent
+6. **Check commit consent** — read `docs/whalekit/COMMIT-POLICY.md`; memos are recorded (never — the entire directory is ignored); honor the recorded decision without re-asking
+7. **Write design memo** — to `docs/whalekit/memos/YYYY-MM-DD-<topic>.md`; never delete after superseding
+8. **Implement** — proceed with the normal development workflow (TDD applies); no plan document
 
 **Architectural:**
 1. **Explore project context** — check files, docs, recent commits
 2. **Ask clarifying questions** — one at a time, multiple choice preferred
 3. **Propose 2-3 approaches** — with trade-offs and your recommendation
 4. **Present design** — in sections scaled to their complexity, get user approval after each section
-5. **Check commit consent** — read `docs/whalekit/COMMIT-POLICY.md`; memos are recorded (never — the entire directory is ignored); honor the recorded decision without re-asking
-6. **Write design memo** — to `docs/whalekit/memos/YYYY-MM-DD-<topic>.md`; never delete after superseding
-7. **Debate-team refinement (optional, on consent)** — loop the memo through `adversarial-review` decision mode until convergence
-8. **Transition to spec** — at tier L3+, write the design spec (`docs/whalekit/specs/YYYY-MM-DD-<topic>-design.md`) and follow the commit-consent protocol for it
+5. **Ask whether to persist the design as a memo** — artifact-chain Q1; write only on consent
+6. **Check commit consent** — read `docs/whalekit/COMMIT-POLICY.md`; memos are recorded (never — the entire directory is ignored); honor the recorded decision without re-asking
+7. **Write design memo** — to `docs/whalekit/memos/YYYY-MM-DD-<topic>.md`; never delete after superseding
+8. **Debate-team refinement (optional, on consent)** — loop the memo through `adversarial-review` decision mode until convergence
+9. **Transition to spec** — at tier L3+, write the design spec (`docs/whalekit/specs/YYYY-MM-DD-<topic>-design.md`) and follow the commit-consent protocol for it
