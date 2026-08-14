@@ -1,6 +1,6 @@
 ---
 name: targeted-exploration
-description: Use when a non-trivial task needs understanding before process selection - explores a fixed target (module, file, question, or whole project) with bounded scope and reports findings, evidence, risks, and scope estimate
+description: Use when a non-trivial task needs understanding of a fixed target (module, file, question, or whole project) before process selection
 ---
 
 # Targeted Exploration

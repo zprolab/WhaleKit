@@ -1,6 +1,6 @@
 ---
 name: routing
-description: Use when selecting process depth for a task - maps the exploration report to one of five tiers, gates which skills apply, and enforces the one-way ratchet
+description: Use when selecting process depth for a task
 ---
 
 # Routing

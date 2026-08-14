@@ -1,6 +1,6 @@
 ---
 name: dual-records
-description: Use at tier L5 Full - for every directory under development, writes DEVELOPMENT.md (how to build) and README.md (amendable truth, review baseline) with explicit git-traced amendments
+description: Use when a directory under development is routed to tier L5 Full
 ---
 
 # Dual Records

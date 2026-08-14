@@ -1,6 +1,6 @@
 ---
 name: socratic-brainstorming
-description: Use before creative work - creating features, building components, adding functionality, or modifying behavior - explores user intent through Socratic questioning, researches the project, and produces a persisted design memo
+description: Use before creative work - creating features, building components, adding functionality, or modifying behavior
 ---
 
 Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers

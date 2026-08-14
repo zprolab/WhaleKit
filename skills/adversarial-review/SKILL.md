@@ -1,6 +1,6 @@
 ---
 name: adversarial-review
-description: Use only for decisions affecting a final implementation conclusion, possible technical-direction shifts, or architecture-level bug fixes - runs red/blue/black adversarial loops in decision mode or red-finds/blue-fixes loops in review mode
+description: Use only for decisions affecting a final implementation conclusion, possible technical-direction shifts, or architecture-level bug fixes
 ---
 
 # Adversarial Review
