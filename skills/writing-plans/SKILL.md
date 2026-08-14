@@ -22,11 +22,11 @@ Assume they are a skilled developer, but know almost nothing about our toolset o
 
 ## Doc Chain
 
-This skill writes a **plan**, which derives from the **spec** (see doc chain §7.7 of the spec). The spec is the higher document and travels with the plan; executors read both. On any conflict between the spec and a user requirement, resolve toward the user requirement. If the spec is silent or ambiguous, or if the more refined plan is clearly better, ask the user rather than deciding alone.
+This skill writes a **plan**, which derives from the **spec** — on conflict resolve toward the higher document, and ask the user when it is silent or the refined side is clearly better — canonical: `whalekit-conventions` §4.
 
 ## Commit Consent
 
-Before writing the plan artifact, follow the commit-consent protocol (§7.6 of the spec): first read `docs/whalekit/COMMIT-POLICY.md` for the recorded decision on `plans`. Currently that note says: **never — ignore the entire `docs/whalekit/plans/` directory**. Follow the recorded decision exactly; do not re-ask. If the policy note has no record for `plans`, ask the user before writing — answers: **yes** / **no** (gitignore this file) / **never** (gitignore the entire directory) — and record the answer in the policy note (append-only) before applying it.
+Before writing the plan artifact, follow the commit-consent protocol. Currently `plans` is recorded **never — ignore the entire `docs/whalekit/plans/` directory**; follow the recorded decision and do not re-ask — canonical: `whalekit-conventions` §3.
 
 ## Scope Check
 

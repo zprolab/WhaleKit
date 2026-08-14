@@ -37,7 +37,7 @@ Four things stop you, and only these: an irreversible or destructive operation; 
 
 ## Doc Chain
 
-On any conflict between documents during execution, resolve toward the higher-level document — the chain is `Dual → Plan → Spec → Memo → User requirement` (spec §7.7), with the user requirement as the golden standard. The plan derives from the spec; conflicts between a task and the plan's Global Constraints or the spec resolve toward the spec and ultimately the user requirement. When the higher document is **silent** or the later, more refined side is **clearly superior**, **ask the user** rather than deciding alone. The user's live decision outranks the chain.
+On any conflict between documents during execution, resolve toward the higher-level document (`Dual → Plan → Spec → Memo → User requirement`), and ask the user when the higher document is silent or the refined side is clearly better — canonical: `whalekit-conventions` §4.
 
 ## Setup
 

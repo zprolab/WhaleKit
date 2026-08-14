@@ -43,6 +43,8 @@ description: Use when selecting process depth for a task
 >
 > **Before any major decision, present 2–3 options to the user.**
 
+canonical: `whalekit-conventions` §2.
+
 ## 4. One-Way Ratchet
 
 4.1 When hidden complexity is discovered mid-task that the chosen tier does not cover — for example a "small feature, single file" (L2) turning out to touch interfaces (L3) or span modules (L4) — stop immediately and announce the discovery.
@@ -63,4 +65,4 @@ Implementing a non-trivial task without a user-chosen tier is a violation of thi
 
 ## 6. Parking Notice
 
-6.1 Skills with `metadata.status: useless-now` are never admitted by any tier — never triggered or recommended, until the status is flipped by a spec-level decision.
+6.1 Skills with `metadata.status: useless-now` are never admitted by any tier, triggered, or recommended — canonical: `whalekit-conventions` §5.

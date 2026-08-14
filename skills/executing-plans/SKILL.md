@@ -21,11 +21,11 @@ Like every WhaleKit skill, executing-plans is not mandatorily invoked. Its admis
 
 ## Doc Chain
 
-This skill executes a **plan**, which derives from the **spec** (see doc chain §7.7 of the spec). The plan is read alongside the higher documents that produced it. On any conflict between the plan (or its derived documents) and a user requirement, resolve **toward the user requirement**. If the higher document (spec/memo/user requirement) is silent or ambiguous, or if the more refined plan is clearly better, ask the user rather than deciding alone. The user's live decisions always outrank the chain.
+This skill executes a **plan**, which derives from the **spec** — on any conflict resolve toward the higher document (plan, spec, memo, user requirement), and ask the user when the higher document is silent or the refined side is clearly better — canonical: `whalekit-conventions` §4.
 
 ## Commit Consent
 
-Before writing any process artifact (e.g., an amended or new plan document), follow the commit-consent protocol (§7.6 of the spec): first read `docs/whalekit/COMMIT-POLICY.md` for the recorded decision covering that artifact type. Follow the recorded decision exactly; do not re-ask for a recorded type. If the policy note has no record for the artifact type, ask the user before writing — answers: **yes** / **no** (gitignore this file) / **never** (gitignore the entire directory) — and record the answer in the policy note (append-only) before applying it. Currently the recorded decisions in `docs/whalekit/COMMIT-POLICY.md` are: **specs — no (gitignored individually)** and **plans — never (ignore the entire directory)**; honor them as recorded.
+Before writing any process artifact (e.g., an amended or new plan document), follow the commit-consent protocol. Currently recorded decisions are **specs — no (gitignored individually)** and **plans — never (ignore the entire directory)**; honor them as recorded and do not re-ask — canonical: `whalekit-conventions` §3.
 
 ## The Process
 

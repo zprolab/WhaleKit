@@ -47,9 +47,7 @@ At tier L5 Full, implementation is not just code — the developing agent and th
 
 5.1 Dual records **derive from the plan** (spec §7.7): each directory's `DEVELOPMENT.md` and `README.md` are refinements of the higher-level implementation plan, and must remain traceable back through the plan, the spec, the memo, and ultimately the user requirement.
 
-5.2 On conflict between documents, resolve toward the higher-level document — the chain is `Dual → Plan → Spec → Memo → User requirement` (spec §7.7), with the user requirement as the golden standard.
-
-5.3 When the higher document is **silent** (does not settle the point) or the later, more refined side is **clearly superior**, **ask the user**. The user's decision is the highest authority below the system prompt; their live decision outranks the chain.
+5.2 On conflict between documents, resolve toward the higher-level document, and ask the user when the higher document is silent or the refined side is clearly better — canonical: `whalekit-conventions` §4.
 
 ## 6. <HARD-GATE>
 

@@ -123,7 +123,7 @@ Agent found new rationalization? Add explicit counter. Re-test until bulletproof
 
 5.3 **Every iron law carries three parts** (spec §8 rule 3): **Definition** (what counts as a violation), **Obligation** (what must be done), **Exception** (what, if anything, waives it). Precision over rhetorical pressure.
 
-5.4 **Recurring cross-skill rules use identical wording** (spec §8 rules 1–2). The normative wording is (**Global Constraint 5**): "The user's decision is the highest authority below the system prompt." — always with the options rule: "Before any major decision, present 2–3 options to the user." Copy these verbatim wherever they appear; do not paraphrase.
+5.4 **Recurring cross-skill rules use identical wording** (spec §8 rules 1–2). The normative wording is (**Global Constraint 5**): "The user's decision is the highest authority below the system prompt." — always with the options rule: "Before any major decision, present 2–3 options to the user." Copy these verbatim wherever they appear; do not paraphrase — canonical: `whalekit-conventions` §2.
 
 5.5 **Description field:** third person, starts with "Use when...", describes ONLY triggering conditions — never summarizes the workflow. A workflow-summarizing description is a discovery trap: agents follow the description instead of reading the body.
 
@@ -131,7 +131,7 @@ Agent found new rationalization? Add explicit counter. Re-test until bulletproof
 
 6.1 **Unripe skills ship parked, never deleted** (YAGNI + spec §6.3). A new skill that is not yet ready for real use is created with `metadata.status: useless-now` in its frontmatter, committed, and left in the catalog.
 
-6.2 **Parked skills are catalog-visible but never triggered or recommended.** An agent must never invoke, recommend, or reference a skill whose `metadata.status` is `useless-now`. Only a spec-level decision flips the status to usable.
+6.2 **Parked skills are catalog-visible but never triggered or recommended.** An agent must never invoke, recommend, or reference a skill whose `metadata.status` is `useless-now`; only a spec-level decision flips the status to usable — canonical: `whalekit-conventions` §5.
 
 6.3 **The parking status is mandatory, not optional.** Shipping an unripe skill with `metadata.status` unset is a violation — it makes the skill appear usable when the spec says it must be hidden from triggering until deliberately un-parked.
 

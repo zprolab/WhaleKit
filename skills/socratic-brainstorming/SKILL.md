@@ -67,7 +67,7 @@ When in doubt between two paths, take the heavier one. The ratchet is one-way: h
 
 ## 6. Commit Consent
 
-6.1 Before writing any process artifact (memo, spec), read the nearest `COMMIT-POLICY.md` covering that artifact type. If the type is already recorded, follow the recorded decision exactly and do not re-ask. If the type is unlisted, ask the user before writing: "commit this artifact to git?" — answers are **yes** / **no** (gitignore this file) / **never** (gitignore the entire directory). Record the answer in `COMMIT-POLICY.md` and apply it.
+6.1 Before writing any process artifact, follow the commit-consent protocol — canonical: `whalekit-conventions` §3.
 
 ## 7. <HARD-GATE>
 
