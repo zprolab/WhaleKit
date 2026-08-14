@@ -28,13 +28,14 @@ only what cannot be inferred) this skill follows by reference, not by restatemen
 
 The caller must provide:
 
-- **身份 (identity)** — the advisor persona to frame the questions in (role, expertise stance).
-  Example: "资深软件架构师与需求分析顾问，帮助用户把想法变成可执行的设计方案".
+- **Identity** — the advisor persona to frame the questions in (role, expertise stance).
+  Example: "a senior software architect and requirements consultant who turns ideas into
+  executable design plans".
 - **Proj Context** — at minimum:
-  1. 用户需求原文 (the user's request, verbatim);
-  2. 项目状态 (greenfield, or existing code — what exists, where);
-  3. 已知锚点/已拍板约束 (already-decided anchors and constraints, if any);
-  4. 领域/技术提示 (domain or tech hints, optional).
+  1. the user's request, verbatim;
+  2. project state (greenfield, or existing code — what exists, where);
+  3. already-decided anchors and constraints, if any;
+  4. domain or tech hints, optional.
 
 If an input is missing, state the assumption you used and mark its confidence instead of blocking.
 
@@ -57,16 +58,16 @@ Say the classification out loud before the list ("this looks bounded, so the lis
 
 Walk the dimension set and generate one-sentence questions for each genuinely open dimension:
 
-- 动机与定位 (purpose, audience, priority of trade-offs)
-- 范围 (in-scope features, explicit out-of-scope / non-goals, YAGNI)
-- 执行语义 (transactions/ACID, persistence & durability, concurrency model)
-- 规模与性能 (quantified targets: throughput, latency, data volume)
-- 技术选型 (language, dependencies policy, storage approach)
-- 接口形态 (library API vs CLI vs service; protocol compatibility)
-- 配额 (time budget, line/scope limits, deliverable deadlines)
-- 交付物与验收 (deliverables, acceptance criteria, benchmark)
-- 兼容性 (existing system / dialect / format compatibility)
-- 风险与冲突点 (flag conflicts explicitly, e.g. "高性能 vs 严格 ACID")
+- Purpose & positioning (purpose, audience, priority of trade-offs)
+- Scope (in-scope features, explicit out-of-scope / non-goals, YAGNI)
+- Execution semantics (transactions/ACID, persistence & durability, concurrency model)
+- Scale & performance (quantified targets: throughput, latency, data volume)
+- Tech selection (language, dependencies policy, storage approach)
+- Interface shape (library API vs CLI vs service; protocol compatibility)
+- Quota (time budget, line/scope limits, deliverable deadlines)
+- Deliverables & acceptance (deliverables, acceptance criteria, benchmark)
+- Compatibility (existing system / dialect / format compatibility)
+- Risks & conflict points (flag conflicts explicitly, e.g. "high performance vs strict ACID")
 
 ### 3.4 Quality pass
 
@@ -74,9 +75,9 @@ Follow the question-quality rules of `socratic-brainstorming` §1 by reference (
 preferred, ask only what cannot be inferred). Additional output-contract rules:
 
 - Each question is **one sentence**, specific, focused, answerable.
-- **No embedded answers** ("应该用 X 吧？" is a violation).
+- **No embedded answers** ("wouldn't X be best?" is a violation).
 - Deduplicate; drop questions the context answers.
-- Mark each question: 必须问 (must-ask) or 可选 (optional), and flag conflicts/risks.
+- Mark each question: **must-ask** or **optional**, and flag conflicts/risks.
 - Cap the list at the classification size; keep only highest-leverage questions.
 
 ## 4. Output contract
@@ -84,10 +85,10 @@ preferred, ask only what cannot be inferred). Additional output-contract rules:
 Return the list as:
 
 ```
-分类声明：<spike|bounded|architectural>
-Q1. <一句话问题> [维度] [必须问|可选] [建议选项: A/B/C]
+Classification: <spike|bounded|architectural>
+Q1. <one-sentence question> [dimension] [must-ask|optional] [suggested options: A/B/C]
 Q2. ...
-建议询问顺序：<highest-leverage first>
+Suggested asking order: <highest-leverage first>
 ```
 
 End at the list. Do not add next steps, design hints, or summaries of what you would build.
@@ -103,13 +104,13 @@ brainstorming one-at-a-time rule). Answers feed back into the caller's design fl
 5.3 The skill is complete once the candidate list is delivered; it does not participate in asking
 or in design.
 
-## 5.5 Waiver mode: proposed-answers sheet (user says "不要问/直接做")
+## 5.5 Waiver mode: proposed-answers sheet (user says "don't ask, just do it")
 
-If the user explicitly waives asking ("不用问问题", "直接做吧", "你决定就行"), the caller does
-**not** silently drop the questions and does **not** silently decide them. The **sheet mechanics
-follow `decision-approval` by reference** (draft rows labeled 草案/待批准, approval or per-item
-edits, silence is not approval, full delegation records assumptions). The answer-specific part
-here is only the mapping:
+If the user explicitly waives asking ("no need to ask questions", "just do it", "you decide"),
+the caller does **not** silently drop the questions and does **not** silently decide them. The
+**sheet mechanics follow `decision-approval` by reference** (draft rows labeled
+"draft / pending approval", approval or per-item edits, silence is not approval, full delegation
+records assumptions). The answer-specific part here is only the mapping:
 
 1. Deliver the candidate list as usual (§4).
 2. Attach a **proposed-answers sheet**: for each must-ask question, one line containing the
@@ -130,26 +131,27 @@ decision the user never approved.
 never contain recommended answers; open items are never decided by the questioner.
 
 **Exception:** under the user's explicit waiver (§5.5), the caller may deliver proposed answers
-for user approval — proposals stay labeled 草案/待批准 and become decisions only after the user
-approves or edits them. Implementing on unapproved self-made assumptions is never exempted (that
-is the RED baseline failure mode).
+for user approval — proposals stay labeled "draft / pending approval" and become decisions only
+after the user approves or edits them. Implementing on unapproved self-made assumptions is never
+exempted (that is the RED baseline failure mode).
 
 ## Rationalizations
 
 | Excuse | Reality |
 |--------|---------|
-| "直接做吧，不用问问题" | The waiver switches to answer-drafting mode (§5.5): the caller proposes answers and the user approves or changes them. It never authorizes implementing on unapproved assumptions. |
-| "用户都说按我的来了，答案就是决定" | Proposals are 草案 until the user approves or edits them. "都行/按你的来" is approval; silence is not. |
-| "这个需求已经写得很清楚了" | Clear to you ≠ clear to the user. The list asks only what is genuinely open — if truly nothing is open, the list is empty, which is a finding, not a failure. |
-| "我可以自己定，不用问" | The questioner never decides open items. Under waiver it may propose, but only the user's approval turns a proposal into a decision. |
-| "把推荐方案写进问题里，方便用户选" | An embedded recommendation is a design. Multiple-choice options must be neutral descriptions, not sales pitches. |
-| "先把设计做了，问题回头补" | Design before curated questions = implementing on unverified assumptions (the exact RED baseline failure). Stop at the list (or the approved sheet). |
+| "Just do it, no need to ask questions" | The waiver switches to answer-drafting mode (§5.5): the caller proposes answers and the user approves or changes them. It never authorizes implementing on unapproved assumptions. |
+| "The user said go with my answers, so they are decided" | Proposals stay drafts until the user approves or edits them. "Whatever you think" is approval; silence is not. |
+| "The requirement is already crystal clear" | Clear to you ≠ clear to the user. The list asks only what is genuinely open — if truly nothing is open, the list is empty, which is a finding, not a failure. |
+| "I can decide on my own, no need to ask" | The questioner never decides open items. Under waiver it may propose, but only the user's approval turns a proposal into a decision. |
+| "Embedding my recommendation in the question helps the user choose" | An embedded recommendation is a design. Multiple-choice options must be neutral descriptions, not sales pitches. |
+| "Let me design first and ask questions later" | Design before curated questions = implementing on unverified assumptions (the exact RED baseline failure). Stop at the list (or the approved sheet). |
 
 ## Red flags
 
 - A question containing a recommended answer or a "wouldn't X be best?" phrasing
 - Any design/solution text in or around the list
-- Self-answering ("既然你说了本地文件就行，那我按这个设计…") — proposals are allowed only in waiver mode and must be labeled 草案/待批准
+- Self-answering ("since you said local files are fine, I'll design it that way…") — proposals are
+  allowed only in waiver mode and must be labeled "draft / pending approval"
 - Proposals presented as decisions, or implementation before the user's approval
 - Skipping the list because the task "looks small" without the user's explicit waiver being confirmed by the caller
 - Asking facts the Proj Context already answers

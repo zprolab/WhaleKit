@@ -92,7 +92,7 @@ memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records a
 | `dual-records` | **original** — DEVELOPMENT.md + README.md (amendable truth) |
 | `commit` | **original** — commit strategy gate + logical commit procedure |
 | `clarification-questioner` | **original** — candidate clarifying-question list from identity + project context; caller curates and asks one at a time |
-| `decision-approval` | **original** — waived decisions become a draft sheet (建议/理由/备选/置信度) the user approves or edits before they take effect |
+| `decision-approval` | **original** — waived decisions become a draft sheet (proposal/rationale/alternatives/confidence) the user approves or edits before they take effect |
 | `socratic-brainstorming` | adapted (heavy) — from obra/superpowers `brainstorming` |
 | `test-driven-development` | adapted — from obra/superpowers |
 | `systematic-debugging` | adapted — from obra/superpowers |
