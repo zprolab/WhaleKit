@@ -13,20 +13,20 @@ If you were dispatched as a subagent to execute a specific task, ignore this ski
 
 1.1 Read `docs/whalekit/COMMIT-POLICY.md` if it exists in the workspace before writing any process artifact.
 
-1.2 Classify the request before anything else:
+1.2 **Read the meta-skill.** Immediately after this skill, READ `whalekit-conventions` (the meta-skill) in full — before classifying the request (§1.3) and before any task work. Its sections are the canonical wording for all rules below; where this skill and conventions differ, conventions win. The conventions skill binds every agent — including subagents; do not skip it when dispatching work. Its iron-law template (§6.4) is the required structure for every gate this or any other skill imposes.
+
+1.3 Classify the request before anything else:
 
   1. **Pure question** — the user asks for explanation, reasons, feasibility, or an opinion (e.g. "why does X do Y?", "is X feasible?", "what do you think?"), with no implementation directive and no request to change anything. Answer directly. Do NOT start the artifact chain, do NOT run `targeted-exploration`'s ceremony, and do NOT implement or offer to implement (a brief offer to help later is allowed, but never with chain questions attached).
   2. **Task** — the user requests or implies a change (imperative: add/fix/change/implement, or an explicit request to do work). Tasks are trivial (mechanical, single line) or non-trivial.
 
-1.3 Non-trivial task requests → invoke `targeted-exploration` before any further skill.
+1.4 Non-trivial task requests → invoke `targeted-exploration` before any further skill.
 
-1.4 Trivial task requests → enter the artifact chain at Q1 (§2) — answering 'no' to Q1 is the L1 entry for non-mechanical tasks; verified one-line mechanical fixes use the L1 fast path (§2.2).
-
-1.5 Invoke `whalekit-conventions` immediately after this skill. Its sections are the canonical wording for all rules below; where this skill and conventions differ, conventions win. The conventions skill binds every agent — including subagents; do not skip it when dispatching work.
+1.5 Trivial task requests → enter the artifact chain at Q1 (§2) — answering 'no' to Q1 is the L1 entry for non-mechanical tasks; verified one-line mechanical fixes use the L1 fast path (§2.2).
 
 ## 2. Artifact Chain
 
-For any **task** that is not a verified one-line mechanical fix, ask the process-depth questions ONE AT A TIME, in order, waiting for each answer. Pure questions (classification §1.2.1) never enter the chain — answer them directly and stop.
+For any **task** that is not a verified one-line mechanical fix, ask the process-depth questions ONE AT A TIME, in order, waiting for each answer. Pure questions (classification §1.3.1) never enter the chain — answer them directly and stop.
 
 For tasks that begin with creative or design work — where `socratic-brainstorming` applies — the artifact chain comes LAST: brainstorm the design first (Socratic questions, design presentation, approval), and only then ask the chain, whose Q1 is exactly the "should this design be persisted as a memo?" question. Brainstorming is the conversation; the chain decides what gets written down.
 
@@ -58,7 +58,7 @@ The tier reached is where the chain stopped; the gating table applies at that ti
 
 A task started without answering the artifact-chain questions at any depth above L1 is a violation of this skill.
 
-**Definition:** a non-trivial task whose process-depth questions (Q1–Q4) were never asked or answered (absent an explicit 'skip the menu' waiver). Pure questions (§1.2.1) are not tasks and never trigger this gate.
+**Definition:** a non-trivial task whose process-depth questions (Q1–Q4) were never asked or answered (absent an explicit 'skip the menu' waiver). Pure questions (§1.3.1) are not tasks and never trigger this gate.
 
 **Obligation:** before touching any implementation, ask the chain questions (Q1–Q4), one at a time, and wait for the user's explicit answer.
 

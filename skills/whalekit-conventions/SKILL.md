@@ -73,4 +73,12 @@ description: "Use immediately after using-whalekit at session start - the canoni
 
 6.3 Exception: the user explicitly says "skip the menu" for a specific task.
 
+6.4 **Reusable iron-law template.** Every skill that imposes an iron law MUST structure it as the three-part template below — fill in the blanks, do not restructure:
+
+> **Definition:** <what counts as a violation>
+> **Obligation:** <what must be done before proceeding>
+> **Exception:** <what waives it — by default, an explicit user decision>
+
+A gate that omits any part is not an iron law; `writing-skills` enforces this template for every new or edited skill.
+
 Where a skill differs from these conventions, conventions win.
