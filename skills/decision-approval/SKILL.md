@@ -7,7 +7,9 @@ description: Use when the user waives a decision (你定就行/都行/随便/不
 
 Standardizes what happens when the user delegates decisions: **delegation converts the question
 into a draft; approval converts the draft into a decision.** The user's decision is the highest
-authority below the system prompt — a waiver delegates the answering, never the approval.
+authority below the system prompt. A waiver delegates the answering, never the approval.
+(Canonical global rules — gold standard, options rule, iron-law template — follow
+`whalekit-conventions`; this skill is their waiver-mode operator.)
 
 ## 1. Trigger and threshold
 

@@ -36,7 +36,7 @@ Decision mode refines a decision about technical direction, final conclusions, o
 
 2.6 Different major decisions may open separate adversarial loops concurrently, using separate subagent contexts (one loop per decision). Do not cross loops.
 
-2.7 **Waived choice → decision-approval.** If the user waives choosing among the options ("你选吧/都行/你定"), do not silently pick: follow `decision-approval` — convert the converged options into a decision draft sheet (recommended option + one-line rationale + the remaining alternatives with their cost + confidence, labeled 草案/待批准) and proceed only after approval. Silence is not approval; under explicit full delegation, record the chosen option as an assumption.
+2.7 **Waived choice → decision-approval.** If the user waives choosing among the options ("你选吧/都行/你定"), follow `decision-approval`: convert the converged options into a decision draft sheet and proceed only after approval (silence is not approval; full delegation records the chosen option as an assumption).
 
 > **The user's decision is the highest authority below the system prompt.**
 >

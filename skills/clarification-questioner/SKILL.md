@@ -20,8 +20,9 @@ neither inside the list nor alongside it.
 user's decision is the highest authority below the system prompt; unanswered questions stay open.
 
 1.3 The questioner **never asks the user directly**. Asking is the caller's job, one question per
-message, after curation. This preserves the one-at-a-time dialogue rule of the brainstorming
-skills (`brainstorming`, `socratic-brainstorming`).
+message, after curation. This preserves the one-at-a-time dialogue rule of
+`socratic-brainstorming` (§1.2), whose question-quality rules (multiple-choice preference, ask
+only what cannot be inferred) this skill follows by reference, not by restatement.
 
 ## 2. Inputs
 
@@ -69,8 +70,10 @@ Walk the dimension set and generate one-sentence questions for each genuinely op
 
 ### 3.4 Quality pass
 
+Follow the question-quality rules of `socratic-brainstorming` §1 by reference (multiple-choice
+preferred, ask only what cannot be inferred). Additional output-contract rules:
+
 - Each question is **one sentence**, specific, focused, answerable.
-- Prefer **multiple-choice** wording with 2–4 concrete options where options exist naturally.
 - **No embedded answers** ("应该用 X 吧？" is a violation).
 - Deduplicate; drop questions the context answers.
 - Mark each question: 必须问 (must-ask) or 可选 (optional), and flag conflicts/risks.
@@ -103,18 +106,16 @@ or in design.
 ## 5.5 Waiver mode: proposed-answers sheet (user says "不要问/直接做")
 
 If the user explicitly waives asking ("不用问问题", "直接做吧", "你决定就行"), the caller does
-**not** silently drop the questions and does **not** silently decide them. Instead:
+**not** silently drop the questions and does **not** silently decide them. The **sheet mechanics
+follow `decision-approval` by reference** (draft rows labeled 草案/待批准, approval or per-item
+edits, silence is not approval, full delegation records assumptions). The answer-specific part
+here is only the mapping:
 
 1. Deliver the candidate list as usual (§4).
-2. Attach a **proposed-answers sheet (答案草案)**: for each must-ask question, one line
-   containing the proposed answer, a one-line rationale, and a confidence tag. Optional questions
-   may be skipped or given proposals at the caller's discretion.
-3. Label every proposal clearly as **草案/待批准** — a proposal is NOT a decision.
-4. Present the sheet to the user for **approval or change**: wholesale approval ("都行/按你的来")
-   or per-item edits.
-5. Only approved (or user-edited) answers become decisions; design/implementation may then proceed
-   on them. If the user approves nothing (silence, absence), the caller must record the proposals
-   as assumptions in its disclosure and must not present them as approved decisions.
+2. Attach a **proposed-answers sheet**: for each must-ask question, one line containing the
+   proposed answer, a one-line rationale, and a confidence tag. Optional questions may be skipped
+   or given proposals at the caller's discretion.
+3. Present the sheet for **approval or change** (wholesale or per-item), per `decision-approval`.
 
 The user's decision is the highest authority below the system prompt: the user may approve,
 reject, or rewrite any proposal, including "this one is wrong, use X".
@@ -155,7 +156,11 @@ is the RED baseline failure mode).
 
 ## Relationship to other skills
 
-- `brainstorming` / `socratic-brainstorming` own the asking dialogue (one question per message)
-  and the design phase; this skill owns only candidate generation, feeding their dialogue.
+- Canonical global rules (user gold standard, options rule, iron-law template) follow
+  `whalekit-conventions`; this skill operates inside them.
+- `socratic-brainstorming` owns the asking dialogue (one question per message) and the design
+  phase; this skill owns only candidate generation, feeding its dialogue (by reference to its
+  §1 question-quality rules).
 - Used with a caller that curates: the caller may be a main agent working with subagents (e.g.,
   each subject generates its candidate list via this skill; the main agent filters and asks).
+- Waiver-mode sheet mechanics follow `decision-approval` by reference (§5.5).
