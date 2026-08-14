@@ -47,12 +47,13 @@ per task, from none at L1 up to full ceremony at L5. Core flow:
 ```
 Session start → using-whalekit (mandatory entry)
   → Task assessment: is exploration needed?
-      ├─ Trivial task (one-line fix) → go straight to tier selection
+      ├─ Trivial task (one-line fix) → artifact chain at Q1
       └─ Non-trivial task → targeted-exploration (target = task core or whole project)
            → Exploration report: findings + evidence + risks + scope estimate
-  → Main agent applies routing: recommends a tier + presents 2–3 tier options
-  → User decides (gold standard)
-  → Skills gated by tier → execution
+  → Main agent applies routing: asks the artifact chain one question at a time
+     (Q1 memo? → Q2 spec? → Q3 plan? → Q4 dual?)
+  → User answers each question (gold standard)
+  → Skills gated by reached tier → execution
 ```
 
 | Tier | Process | Trigger signals (from exploration report) |
@@ -62,6 +63,10 @@ Session start → using-whalekit (mandatory entry)
 | **L3** Memo → Spec | + specification | Medium feature, touches interfaces |
 | **L4** Memo → Spec → Plan | + implementation plan | Large feature, multiple files/modules |
 | **L5** Full | + dual records | New project, architecture-level, directional decisions |
+
+The tier is reached one question at a time via the artifact chain — the tier = how far the chain
+went (memo → spec → plan → dual records, one question at a time): a "no" at Q1 stops at L1,
+memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records at L5.
 
 **Iron rules of routing:**
 
