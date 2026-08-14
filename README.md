@@ -22,7 +22,7 @@ From the repository root, run the installer:
 ./install.sh --uninstall     # remove every WhaleKit skill symlink (works with --project too)
 ```
 
-- **Default**: symlinks all 19 skills into `$DSH_HOME/skills` (defaults to `~/.dsh/skills`).
+- **Default**: symlinks all 20 skills into `$DSH_HOME/skills` (defaults to `~/.dsh/skills`).
 - **`--project`**: symlinks into `<projectRoot>/.dsh/skills`, which DSH ranks above the home root.
 - **`--uninstall`**: removes every WhaleKit symlink and the emptied target directory.
 - Options are order-independent (`install.sh --uninstall --project` behaves identically).
@@ -79,7 +79,7 @@ memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records a
 
 ## Skill Inventory
 
-19 skills (6 original + 12 adapted + 1 parked). Adapted skills retain their
+20 skills (7 original + 12 adapted + 1 parked). Adapted skills retain their
 `Adapted from obra/superpowers (MIT)` header; see individual `SKILL.md` headers for attribution.
 
 | Skill | Source |
@@ -90,6 +90,7 @@ memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records a
 | `routing` | **original** — five tiers, gating, one-way ratchet |
 | `adversarial-review` | **original** — red/blue/black meta-skill (decision + review modes) |
 | `dual-records` | **original** — DEVELOPMENT.md + README.md (amendable truth) |
+| `commit` | **original** — commit strategy gate + logical commit procedure |
 | `socratic-brainstorming` | adapted (heavy) — from obra/superpowers `brainstorming` |
 | `test-driven-development` | adapted — from obra/superpowers |
 | `systematic-debugging` | adapted — from obra/superpowers |
@@ -141,7 +142,7 @@ exempted from by a `<SUBAGENT-STOP>` block) and any skill requiring live user in
 
 ## Roadmap
 
-- **v0.1 (current):** DSH-only, coding domain, 19 skills, five-tier routing.
+- **v0.1 (current):** DSH-only, coding domain, 20 skills, five-tier routing.
 - **v0.2 (planned — 2026-08-14 decision):** multi-runtime planning. DSH-only is a concentration risk (SuperPowers ports to many harnesses); evaluate adapting the skill set to other harnesses to reduce single-runtime exposure. Scope and timeline TBD by a spec-level decision.
 
 ## License
