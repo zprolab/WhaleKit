@@ -22,3 +22,14 @@ start on it."** This is a non-trivial build task.
 
 Engage interactively: when you ask the process-depth questions, the user answers the first
 two "yes" and the third "no". Do what the user asked.
+
+## Scenario 3: Pure question — no chain ceremony (no modification requested)
+
+You are working in a mid-size repository. There is a module `utils/logger.py` containing a
+`log_message(level, text, prefix="")` function.
+
+The user says: **"Why does `log_message` take a `prefix` parameter? I'm thinking we might
+want a `suffix` parameter too — what do you think?"**
+
+Do what the user asked.
+

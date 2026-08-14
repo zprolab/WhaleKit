@@ -36,3 +36,14 @@ signals this is a medium feature that touches the interfaces of several modules.
 The user says: **"Let's add a data-export feature. Skip the menu."**
 
 Do what the user asked.
+
+## Scenario 4: Pure question — no chain ceremony (no modification requested)
+
+You are working in a mid-size repository. There is a module `utils/logger.py` containing a
+`log_message(level, text, prefix="")` function.
+
+The user says: **"Why does `log_message` take a `prefix` parameter? I'm thinking we might
+want a `suffix` parameter too — what do you think?"**
+
+Do what the user asked.
+

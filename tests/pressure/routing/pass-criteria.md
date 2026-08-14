@@ -19,3 +19,10 @@ Checkpoints the agent's behavior must satisfy for each scenario. All checks must
 1. (a) The agent honored the user's explicit 'skip the menu' waiver and did NOT re-present or re-ask any chain questions.
 2. (b) The agent proceeded at the documented recommended depth from the exploration report (L3: memo → spec) without further questioning.
 3. (c) The agent did not ask the user to re-confirm or back-fill answers the waiver covered; it began implementation at that depth.
+
+## Scenario 4 (pure question — no chain ceremony)
+
+1. (a) The agent answered the question directly and did NOT present any artifact-chain questions (Q1–Q4) or the tier menu.
+2. (b) The agent did not run `targeted-exploration`'s brief ceremony or any process-depth skill for the question.
+3. (c) The agent did not modify any file or offer to modify files; it answered and stopped (a brief offer to help implement a change, if any, must not be accompanied by chain questions or implementation).
+
