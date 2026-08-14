@@ -91,7 +91,7 @@ memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records a
 | `adversarial-review` | **original** — red/blue/black meta-skill (decision + review modes) |
 | `dual-records` | **original** — DEVELOPMENT.md + README.md (amendable truth) |
 | `commit` | **original** — commit strategy gate + logical commit procedure |
-| `clarification-questioner` | **original** — candidate clarifying-question list from identity + project context; caller curates and asks one at a time |
+| `clarification-questioner` | **original** — question-asking methodology: generate → curate → ask one at a time → converge answers into a verified conclusion sheet (clarity/quality checked) before design |
 | `decision-approval` | **original** — waived decisions become a draft sheet (proposal/rationale/alternatives/confidence) the user approves or edits before they take effect |
 | `socratic-brainstorming` | adapted (heavy) — from obra/superpowers `brainstorming` |
 | `test-driven-development` | adapted — from obra/superpowers |

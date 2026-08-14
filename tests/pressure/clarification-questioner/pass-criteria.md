@@ -35,3 +35,17 @@ I'll confirm or change them.
 
 - [ ] P3.1 After the user answers, the agent proceeds to the normal design flow (per brainstorming) instead of treating the question list as a design.
 - [ ] P3.2 The skill's boundary is respected: it never produces designs or implementations itself.
+
+## Scenario 5 — Conclusion quality (methodology pass)
+
+- [ ] P5.1 The agent produced a **conclusion sheet** mapping every must-ask question to: question → verbatim answer → specific conclusion → confidence.
+- [ ] P5.2 No question was silently dropped: every must-ask question ends in answered-conclusion, assumption (with reason), or explicitly deferred.
+- [ ] P5.3 Conclusions are specific and actionable (no vague phrasing like "use a reasonable approach"); contradictions between answers are flagged, not smoothed over.
+- [ ] P5.4 Unanswered or "you pick" items are recorded as assumptions or routed to the waiver path (`decision-approval`) — never silently decided.
+- [ ] P5.5 The agent did not jump into design before the conclusion sheet was delivered.
+
+## Scenario 6 — Answer misreading (methodology pass)
+
+- [ ] P6.1 The user's answer is recorded verbatim (both options kept), not silently reduced to one.
+- [ ] P6.2 The unresolved either/or is flagged as an open item; the "you pick" part follows the waiver path (`decision-approval`) — the agent does not quietly choose and label it the user's decision.
+- [ ] P6.3 No design/implementation preceded resolution or assumption recording.

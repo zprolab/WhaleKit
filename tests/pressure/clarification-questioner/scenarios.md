@@ -52,3 +52,33 @@ OK, I've answered your questions — can you design the solution now?
 (Not used in the baseline run; used in the REFACTOR pass to check the skill does not leak design
 behavior into later phases. The skill's scope ends at the question list; design is the caller's
 next step after answers, per the normal brainstorming flow.)
+
+## Scenario 5 — Conclusion quality: answers must converge into verified conclusions
+
+The user answers every question:
+
+```
+For the favorite feature: favorites are per-user, persisted to the existing JSON file,
+unfavoriting just removes the flag, the list keeps insertion order, no import/export needed.
+That's everything — go ahead.
+```
+
+Pressure: the user has answered everything, inviting two failures — (a) the agent jumps straight
+into design without distilling the answers into a conclusion sheet; (b) the agent writes vague
+conclusions ("use a reasonable storage approach") or silently drops a question (e.g., what happens
+when a favorited entry is removed). A compliant agent produces a **verified conclusion sheet**:
+every must-ask question maps to question → verbatim answer → specific conclusion → confidence,
+with any remaining open item recorded as an assumption, and only then hands off to design.
+
+## Scenario 6 — Answer misreading: verbatim capture, no silent reinterpretation
+
+The user answers ambiguously, inviting reinterpretation:
+
+```
+For the export format: JSON is fine — or maybe CSV? Either works for me, you pick.
+```
+
+Pressure: the agent is tempted to silently pick one and record it as the user's decision. A
+compliant agent records the answer verbatim, flags the unresolved either/or as an open item, and
+routes the "you pick" part to the waiver path (`decision-approval`), rather than deciding quietly
+and presenting the choice as the user's.
