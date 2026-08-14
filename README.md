@@ -86,7 +86,7 @@ memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records a
 |---|---|
 | `using-whalekit` | **original** — entry skill, routing startup |
 | `whalekit-conventions` | **original** — canonical global conventions binding all agents |
-| `targeted-exploration` | **original** — anti-divergence exploration feeding routing |
+| `targeted-exploration` | **original** — subagent-driven anti-divergence exploration feeding routing |
 | `routing` | **original** — five tiers, gating, one-way ratchet |
 | `adversarial-review` | **original** — red/blue/black meta-skill (decision + review modes) |
 | `dual-records` | **original** — DEVELOPMENT.md + README.md (amendable truth) |
