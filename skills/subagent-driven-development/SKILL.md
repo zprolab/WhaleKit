@@ -1,9 +1,9 @@
-Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
-
 ---
 name: subagent-driven-development
 description: Use when executing implementation plans with independent tasks in the current session
 ---
+
+Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
 
 # Subagent-Driven Development
 
@@ -45,7 +45,7 @@ Ensure the work happens in an isolated workspace: use `whalekit:using-git-worktr
 
 Conversation memory does not survive compaction. In real sessions, controllers that lost their place have re-dispatched entire completed task sequences — the single most expensive failure observed. Track progress in a ledger file, not only in todos.
 
-- Each plan owns a workspace (`<repo-root>/.superpowers/sdd/<plan-basename>/`), home to every artifact for THIS plan: ledger, briefs, reports, review packages. Another plan's directory is never yours to read or write.
+- Each plan owns a workspace (`<repo-root>/.whalekit/sdd/<plan-basename>/`), home to every artifact for THIS plan: ledger, briefs, reports, review packages. Another plan's directory is never yours to read or write.
 - Check for this plan's ledger at `<workspace>/progress.md`. If its first line names your plan file, tasks with a `Task <N>: complete` line are DONE — do not re-dispatch them; resume at the first task without one. A task whose last line is a fix round is mid-loop: resume the loop at the next round.
 - Create the ledger with its identity as the first line: `# SDD ledger — plan: <plan file path>`.
 - The ledger is your recovery map: the commits it names exist in git even when your context no longer remembers creating them. After compaction, trust the ledger and `git log` over your own recollection.
@@ -218,7 +218,7 @@ Task 1: Hook installation script
 
 Implementer: "Before I begin - should the hook be installed at user or system level?"
 
-You: "User level (~/.config/superpowers/hooks/)"
+You: "User level (~/.config/whalekit/hooks/)"
 
 Implementer: [Later]
   - Implemented install-hook command

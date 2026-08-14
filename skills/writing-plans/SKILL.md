@@ -1,9 +1,9 @@
-Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
-
 ---
 name: writing-plans
 description: Use when you have a spec or requirements for a multi-step task, before touching code
 ---
+
+Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
 
 # Writing Plans
 

@@ -1,9 +1,9 @@
-Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
-
 ---
 name: socratic-brainstorming
 description: Use before creative work - creating features, building components, adding functionality, or modifying behavior - explores user intent through Socratic questioning, researches the project, and produces a persisted design memo
 ---
+
+Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
 
 # Socratic Brainstorming
 

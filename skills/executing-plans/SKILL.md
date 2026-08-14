@@ -1,9 +1,9 @@
-Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
-
 ---
 name: executing-plans
 description: Use when you have a written implementation plan to execute in a separate session with review checkpoints
 ---
+
+Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
 
 # Executing Plans
 

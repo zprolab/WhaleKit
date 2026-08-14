@@ -49,7 +49,7 @@ At tier L5 Full, implementation is not just code — the developing agent and th
 
 5.2 On conflict between documents, resolve toward the higher-level document — the chain is `Dual → Plan → Spec → Memo → User requirement` (spec §7.7), with the user requirement as the golden standard.
 
-5.3 When the higher document is **silent** (does not settle the point) or the later, more refined side is **clearly superior**, **ask the user**. The user is the highest authority below the system prompt; their live decision outranks the chain.
+5.3 When the higher document is **silent** (does not settle the point) or the later, more refined side is **clearly superior**, **ask the user**. The user's decision is the highest authority below the system prompt; their live decision outranks the chain.
 
 ## 6. <HARD-GATE>
 
@@ -59,7 +59,7 @@ Implementation in an L5 directory without both records is a violation.
 
 **Obligation:** before implementing in any L5 directory, create both `DEVELOPMENT.md` (what to build, in what order, how to test) and `README.md` (contract, interfaces, invariants — the review baseline) in that directory. Keep them accurate per section 4 (deviations are resolved by a code change or a committed amendment, never silently).
 
-**Exception:** the user explicitly waives dual records for the directory. Only the user can waive this; the waiver applies to the directory they name, and the user remains the highest authority below the system prompt.
+**Exception:** the user explicitly waives dual records for the directory. Only the user can waive this; the waiver applies to the directory they name, and the user's decision is the highest authority below the system prompt.
 
 ## Red Flags
 

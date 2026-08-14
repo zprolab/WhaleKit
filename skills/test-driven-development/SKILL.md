@@ -1,9 +1,9 @@
-Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
-
 ---
 name: test-driven-development
 description: Use when implementing any feature or bugfix, before writing implementation code
 ---
+
+Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
 
 # Test-Driven Development (TDD)
 
