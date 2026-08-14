@@ -174,3 +174,7 @@ After agents return:
 ## Parking
 
 This skill is parked (useless-now): never triggered or recommended until a spec-level decision flips its status.
+
+## Decision Record
+
+- **2026-08-14** (adversarial review, finding N3): re-evaluated against SuperPowers, which ships this skill **active** (and WhaleKit ships a 176-line clone of it as parked). Decision: **keep parked** (`metadata.status: useless-now`) — parallel agent dispatch is not yet part of any admitted tier (routing §2), and activating it would add an untested surface to a v0.1 that has no pressure scenarios for it. The decision is recorded so the question is closed until a spec-level decision reopens it (routing §6). Candidate future use: parallel red/blue/black adversarial loops (adversarial-review §2.6), multi-task fan-out at L4+. Status flips only by a spec-level decision.

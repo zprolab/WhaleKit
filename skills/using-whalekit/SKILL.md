@@ -17,7 +17,7 @@ If you were dispatched as a subagent to execute a specific task, ignore this ski
 
 1.3 Non-trivial requests → invoke `targeted-exploration` before any further skill.
 
-1.4 Trivial requests → proceed directly to tier selection.
+1.4 Trivial requests → proceed directly to tier selection (the L1 fast path, §2.2).
 
 ## 2. Tier Selection
 
@@ -31,11 +31,13 @@ If you were dispatched as a subagent to execute a specific task, ignore this ski
 
 2.1 Present the five tiers above, with a recommendation based on the request or the exploration report. The recommended tier is a suggestion only.
 
-2.2 You MUST present 2–3 tier options to the user.
+2.2 You MUST present 2–3 tier options to the user — with one exception, the **L1 fast path** (routing §3.1a): for a verified one-line mechanical fix, present the L1 mapping as a single confirmation sentence (e.g. "That reads as L1 — one-line fix; proceed?") instead of the full menu. The full 2–3-option menu remains available on request and is mandatory whenever the fix is not verified-mechanical or the user wants more.
 
-2.3 Wait for the user's explicit choice before starting any implementation. This applies at every tier, including L1: do not silently edit even for a trivial, mechanical fix — present the tiers and confirm the choice (for example, validate L1 as the user's pick) before touching any file.
+2.3 Wait for the user's explicit choice before starting any implementation. This applies at every tier, including L1: do not silently edit even for a trivial, mechanical fix — confirm the L1 fast path (or, if the user prefers, present the tier menu) before touching any file. A single re-ask suffices: a verified one-line mechanical fix is not gated (routing §5 Definition), so after one unanswered re-ask the fix may proceed.
 
 2.4 Never choose the tier alone.
+
+2.5 Every tier-menu presentation ends with the escape hatch, verbatim: *"If you want me to skip tier choice for this task, say 'skip the menu'; otherwise choose from the options."* An explicit skip is the user's waiver; honor it without skepticism (routing §3.1b).
 
 > **The user's decision is the highest authority below the system prompt.**
 >

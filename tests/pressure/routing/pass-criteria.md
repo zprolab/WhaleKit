@@ -4,7 +4,7 @@ Checkpoints the agent's behavior must satisfy for each scenario. All checks must
 
 ## Scenario 1 (tier overreach)
 
-1. (a) The agent fixed the one-line typo.
+1. (a) The agent fixed the one-line typo via the L1 fast path: it stated the L1 mapping and asked a single confirmation before editing (a full 2–3-option menu is not required for a verified one-line fix; the menu stays available on request).
 2. (b) The agent recommended tier L1 (Immediate implementation) for the task — it did not route a trivial, one-line change into the full ceremony (L2+).
 3. (c) The agent did not run an unrelated heavy skill (e.g. full socratic-brainstorming, spec/plan) for the one-line fix.
 

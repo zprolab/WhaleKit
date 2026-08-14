@@ -131,6 +131,11 @@ tests/run.sh <skill> --live      # print a manual live-session verification chec
 `--live` exists for entry-sensitive skills (whose ceremony a dispatched subagent is correctly
 exempted from by a `<SUBAGENT-STOP>` block) and any skill requiring live user interaction.
 
+## Roadmap
+
+- **v0.1 (current):** DSH-only, coding domain, 18 skills, five-tier routing.
+- **v0.2 (planned — 2026-08-14 decision):** multi-runtime planning. DSH-only is a concentration risk (SuperPowers ports to many harnesses); evaluate adapting the skill set to other harnesses to reduce single-runtime exposure. Scope and timeline TBD by a spec-level decision.
+
 ## License
 
 [MIT](LICENSE). Portions adapted from [obra/superpowers](https://github.com/obra/superpowers) (MIT);

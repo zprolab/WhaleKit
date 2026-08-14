@@ -29,6 +29,10 @@ description: Use when selecting process depth for a task - maps the exploration 
 
 3.1 Recommend a tier from the targeted-exploration report — never on impression. Trivial, one-line changes map to L1 with the least ceremony.
 
+3.1a **L1 fast path.** A verified one-line mechanical fix maps to L1 and is confirmed with a single sentence offering the L1 pick (e.g. "That reads as L1 — one-line fix; proceed?"), not a full menu. The full 2–3-option menu remains available on request and is mandatory whenever the fix is not verified-mechanical or the user wants more. "Verified-mechanical" means exactly one line, no interface touched, no ambiguity — when in doubt, the menu applies. The carve-out is not gated (§5 Definition), so after a single unanswered re-ask the fix may proceed.
+
+3.1b **Escape hatch.** Every tier-menu presentation ends with the escape hatch, verbatim: *"If you want me to skip tier choice for this task, say 'skip the menu'; otherwise choose from the options."* An explicit skip is the user's waiver (HARD-GATE Exception, §5); honor it without skepticism.
+
 3.2 You MUST present 2–3 tier options to the user, drawn from the five tiers above, with a recommendation. The recommended tier is a suggestion only.
 
 3.3 Wait for the user's explicit choice before starting implementation. Never choose the tier alone.
@@ -53,9 +57,9 @@ Implementing a non-trivial task without a user-chosen tier is a violation of thi
 
 **Definition:** a non-trivial task — anything beyond a one-line mechanical fix — on which implementation work begins before the user has explicitly chosen a tier from at least two presented options.
 
-**Obligation:** before any implementation of a non-trivial task, present 2–3 tier options and wait for the user's explicit choice; recommend from a targeted-exploration report, never on impression.
+**Obligation:** before any implementation of a non-trivial task, present 2–3 tier options and wait for the user's explicit choice; recommend from a targeted-exploration report, never on impression. For the one-line-mechanical-fix carve-out, use the L1 fast path (§3.1a): a single confirmation, never silence and never a full menu.
 
-**Exception:** the user explicitly waives the tier choice for the task.
+**Exception:** the user explicitly waives the tier choice for the task — including the escape-hatch phrase "skip the menu" (§3.1b), which is honored without skepticism.
 
 ## 6. Parking Notice
 

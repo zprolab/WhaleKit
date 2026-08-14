@@ -53,7 +53,7 @@ When in doubt between two paths, take the heavier one. The ratchet is one-way: h
 
 4.2 The memo is superseded by later artifacts (spec at tier L3, plan at tier L4, dual records at tier L5) but is never deleted. It survives next to the spec and the plan, preserving full traceability per the document golden-standard chain (§7.7).
 
-4.3 Before writing the memo, follow the commit-consent protocol (section 6): read `docs/whalekit/COMMIT-POLICY.md` and ask if the memo artifact type is unlisted. Memos are currently unlisted, so asking is mandatory before writing.
+4.3 Before writing the memo, follow the commit-consent protocol (section 6): read `docs/whalekit/COMMIT-POLICY.md`. Memos are recorded as **never — ignore the entire directory** (decision 2026-08-14): follow the recorded decision exactly and do not re-ask.
 
 4.4 The memo may be refined further at higher tiers: at tier L3+ the memo feeds the design spec; when the user consents, the memo is refined by the debate team first (section 5).
 
@@ -108,7 +108,7 @@ Classify first, announce the path, then complete the items on your path in order
 2. **Ask clarifying questions** — one at a time, multiple choice preferred
 3. **Present short design in chat** — approach, files touched, testing
 4. **Get approval** — STOP and wait for an explicit yes
-5. **Check commit consent** — read `docs/whalekit/COMMIT-POLICY.md`; ask if memos are unlisted (they are)
+5. **Check commit consent** — read `docs/whalekit/COMMIT-POLICY.md`; memos are recorded (never — the entire directory is ignored); honor the recorded decision without re-asking
 6. **Write design memo** — to `docs/whalekit/memos/YYYY-MM-DD-<topic>.md`; never delete after superseding
 7. **Implement** — proceed with the normal development workflow (TDD applies); no plan document
 
@@ -117,7 +117,7 @@ Classify first, announce the path, then complete the items on your path in order
 2. **Ask clarifying questions** — one at a time, multiple choice preferred
 3. **Propose 2-3 approaches** — with trade-offs and your recommendation
 4. **Present design** — in sections scaled to their complexity, get user approval after each section
-5. **Check commit consent** — read `docs/whalekit/COMMIT-POLICY.md`; ask if memos are unlisted (they are)
+5. **Check commit consent** — read `docs/whalekit/COMMIT-POLICY.md`; memos are recorded (never — the entire directory is ignored); honor the recorded decision without re-asking
 6. **Write design memo** — to `docs/whalekit/memos/YYYY-MM-DD-<topic>.md`; never delete after superseding
 7. **Debate-team refinement (optional, on consent)** — loop the memo through `adversarial-review` decision mode until convergence
 8. **Transition to spec** — at tier L3+, write the design spec (`docs/whalekit/specs/YYYY-MM-DD-<topic>-design.md`) and follow the commit-consent protocol for it

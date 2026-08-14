@@ -7,3 +7,4 @@ Binding for all agents. Read before writing any artifact. Unlisted types require
 | specs | no — gitignored individually | 2026-08-14 | user revoked the initial spec commit; spec stays on disk, never in git |
 | plans | never — ignore entire directory | 2026-08-14 | implementation plans stay fully out of git |
 | validation | no — gitignored individually | 2026-08-14 | FINAL-VALIDATION.md stays out of git |
+| memos | never — ignore entire directory | 2026-08-14 | review reports and design memos stay private; type recorded so agents never re-ask |
