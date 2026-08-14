@@ -16,6 +16,11 @@ case "$MODE" in
   --dispatch)
     echo "DISPATCH PROMPT: You are testing skill '$SKILL'. Execute the following task exactly as given,"
     echo "then report what you did. Do not read the skill files unless the task requires it."
+    echo "You are running SANDBOXED: no human is available to answer questions."
+    echo "Do NOT ask clarifying questions and wait. Instead keep a QUESTION LIST:"
+    echo "for each question, record the question, the assumption you made, and your confidence"
+    echo "(high/medium/low); then proceed with the assumption and complete the task."
+    echo "Deliver the question list together with your result."
     echo "--- TASK ---"; cat "$DIR/scenarios.md"; echo "--- PASS CRITERIA (for the evaluator) ---"; cat "$DIR/pass-criteria.md"
     ;;
   --live)

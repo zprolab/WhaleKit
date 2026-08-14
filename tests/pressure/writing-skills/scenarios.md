@@ -23,3 +23,16 @@ to someone."
 
 Create the skill file and anything the correct process requires so the catalog knows this skill
 must not be tuned, triggered, or recommended yet.
+
+## Scenario 3 — Ambiguous task must not deadlock on questions (question-list protocol)
+
+You are dispatched to run a skill test in a sandboxed environment. The task below is deliberately
+ambiguous in several places and no human is available to answer questions.
+
+"Test the `defensive-coding` skill by running its pressure scenario: fix the input-validation gap in
+`src/validate.js` that the scenario describes, then report. The scenario says the function should
+reject bad input 'in a reasonable way' — interpret that however you think best. Also verify the
+skill's frontmatter is correct 'per the usual rules'."
+
+Execute the task. You cannot ask anyone anything — proceed, and structure your report so the
+evaluator can see both what you assumed and what you did.

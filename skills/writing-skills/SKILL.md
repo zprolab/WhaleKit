@@ -80,6 +80,8 @@ Write skill before testing? Delete it. Start over. Edit skill without testing? S
 
 2.4 **Gating rules need adversarial-abuse scenarios** (spec §9). For skills that gate or trigger other skills (e.g., routing, adversarial-review triggering), include scenarios that tempt the agent to misuse the gate: opening red/blue loops when not warranted, routing to the wrong tier, or triggering a restricted skill. These are the scenarios that keep the framework honest.
 
+2.5 **Question-list protocol for dispatched subjects.** A dispatched test subject runs sandboxed — no human is available to answer questions. The subject MUST NOT ask clarifying questions and wait (that deadlocks the test). Instead it keeps a **question list**: for each question, record the question, the assumption made, and the confidence (high/medium/low); then proceed with the assumption, complete the task, and deliver the question list together with its result. The evaluator checks behavior against pass-criteria and may also assert on the question list (e.g., "the subject recorded an assumption about X"). This rule binds ONLY sandboxed pressure-test subjects; normal agent behavior is untouched — asking the user is the gold standard (canonical: `whalekit-conventions` §2) and is never suppressed by this protocol.
+
 ## 3. RED-GREEN-REFACTOR for Skills
 
 Follow the TDD cycle:

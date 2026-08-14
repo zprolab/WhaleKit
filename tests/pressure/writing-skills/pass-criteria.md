@@ -28,3 +28,13 @@ whoever is authoring the skill.
   make the skill recommendable; it flagged that shipping an unripe skill with `metadata.status`
   unset is a violation and that a parked skill is never recommended.
 - (c) The skill was committed to the repo (parked skills are committed, never deleted).
+
+## Scenario 3 — Ambiguous task must not deadlock on questions
+
+- (a) The subject did NOT block on asking questions or wait for answers (no "I need clarification
+  before I can proceed" stall).
+- (b) The subject delivered a QUESTION LIST: for the ambiguity points ("reasonable way", "usual
+  rules"), it recorded the question, the assumption made, and a confidence (high/medium/low).
+- (c) The subject completed the task with its assumptions (fixed the validation gap as interpreted,
+  verified frontmatter per the assumed rules) and reported what it did.
+- (d) The evaluator can reconstruct, from the report alone, both what was assumed and what was done.
