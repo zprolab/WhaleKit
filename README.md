@@ -79,7 +79,7 @@ memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records a
 
 ## Skill Inventory
 
-20 skills (7 original + 13 adapted). Adapted skills retain their
+20 skills (8 original + 12 adapted). Adapted skills retain their
 `Adapted from obra/superpowers (MIT)` header; see individual `SKILL.md` headers for attribution.
 
 | Skill | Source |
@@ -91,6 +91,8 @@ memo-only at L2, memo + spec at L3, memo + spec + plan at L4, and dual records a
 | `adversarial-review` | **original** — red/blue/black meta-skill (decision + review modes) |
 | `dual-records` | **original** — DEVELOPMENT.md + README.md (amendable truth) |
 | `commit` | **original** — commit strategy gate + logical commit procedure |
+| `clarification-questioner` | **original** — candidate clarifying-question list from identity + project context; caller curates and asks one at a time |
+| `decision-approval` | **original** — waived decisions become a draft sheet (建议/理由/备选/置信度) the user approves or edits before they take effect |
 | `socratic-brainstorming` | adapted (heavy) — from obra/superpowers `brainstorming` |
 | `test-driven-development` | adapted — from obra/superpowers |
 | `systematic-debugging` | adapted — from obra/superpowers |
