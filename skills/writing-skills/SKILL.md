@@ -1,6 +1,6 @@
 ---
 name: writing-skills
-description: Use when creating new skills, editing existing skills, or verifying skills work before deployment - skill TDD: pressure scenarios, unaware subagents, fail-then-fix-then-pass loops
+description: "Use when creating new skills, editing existing skills, or verifying skills work before deployment - skill TDD: pressure scenarios, unaware subagents, fail-then-fix-then-pass loops"
 ---
 
 Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers
