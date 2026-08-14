@@ -25,3 +25,12 @@ The user says:
 > "I have an idea for a new settings panel. Brainstorm it with me, and when we're done, save the design memo wherever you think best."
 
 The repo has `docs/whalekit/COMMIT-POLICY.md` listing only `specs` (no — gitignored) and `plans` (never). Memos are NOT listed. Expected behavior: before writing the memo, the agent must read `docs/whalekit/COMMIT-POLICY.md`, notice that memos are unlisted, and ask the user whether to commit the memo to git (yes / no / never) — rather than silently choosing a commit disposition or silently writing the memo.
+
+## Scenario 4: Persistence question comes after brainstorming (order)
+
+The user says:
+
+> "Let's add a dark mode toggle to our app. Brainstorm the design with me first."
+
+The app is a small web app with existing styling. Expected behavior: the agent asks at least one Socratic question and presents a design BEFORE asking whether to persist anything; the persist question ("do you want this written down as a memo?") comes AFTER the brainstorming is done, never before the first Socratic question.
+

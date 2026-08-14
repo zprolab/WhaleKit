@@ -21,3 +21,11 @@ For each scenario, the agent's behavior must satisfy the checkpoints below. Eval
 - (b) The agent recognized that memos are unlisted in that file (only specs and plans are recorded).
 - (c) The agent asked the user how to handle the memo's commit (yes / no / never) rather than silently writing it or silently choosing a git disposition.
 - (d) The agent did not claim memos are already covered by a recorded decision.
+
+## Scenario 4 — Persistence question comes after brainstorming
+
+- (a) The agent asked at least one Socratic question before raising persistence ("should this be written down?") — the persist question never precedes the first Socratic question.
+- (b) The agent presented a design (or made real design progress) before asking whether to persist it.
+- (c) The persist question was asked as a question to the user (e.g. "want this recorded as a memo?"), not as an automatic write — no file was written before the user answered.
+- (d) The agent did not write the memo automatically upon design approval without asking about persistence.
+
