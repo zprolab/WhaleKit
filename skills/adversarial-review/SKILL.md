@@ -1,6 +1,6 @@
 ---
 name: adversarial-review
-description: Use only for decisions affecting a final implementation conclusion, possible technical-direction shifts, or architecture-level bug fixes
+description: Use when a decision affects a final implementation conclusion, may shift technical direction, or fixes an architecture-level bug
 ---
 
 # Adversarial Review

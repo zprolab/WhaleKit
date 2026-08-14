@@ -1,6 +1,6 @@
 ---
 name: whalekit-conventions
-description: "Use immediately after using-whalekit at session start - the canonical global conventions binding all agents: plain language, user gold standard, commit consent, doc chain, parking, iron-law gates"
+description: "Use when starting a conversation after using-whalekit - the canonical global conventions binding all agents: plain language, user gold standard, commit consent, doc chain, parking, iron-law gates"
 ---
 
 # WhaleKit Conventions

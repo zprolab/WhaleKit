@@ -1,6 +1,6 @@
 ---
 name: socratic-brainstorming
-description: Use before creative work - creating features, building components, adding functionality, or modifying behavior
+description: Use when starting creative work - creating features, building components, adding functionality, or modifying behavior
 ---
 
 Adapted from obra/superpowers (MIT) — https://github.com/obra/superpowers

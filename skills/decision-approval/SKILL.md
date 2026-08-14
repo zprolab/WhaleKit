@@ -3,7 +3,7 @@ name: decision-approval
 description: Use when the user waives a decision (你定就行/都行/随便/不用问我) and open decisions must be resolved through a draft sheet the user approves or edits before they take effect
 ---
 
-# Decision Approval (决策草案批准)
+# Decision Approval
 
 Standardizes what happens when the user delegates decisions: **delegation converts the question
 into a draft; approval converts the draft into a decision.** The user's decision is the highest
