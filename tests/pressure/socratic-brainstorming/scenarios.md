@@ -24,7 +24,7 @@ The user says:
 
 > "I have an idea for a new settings panel. Brainstorm it with me, and when we're done, save the design memo wherever you think best."
 
-The repo has `docs/whalekit/COMMIT-POLICY.md` listing only `specs` (no — gitignored) and `plans` (never). Memos are NOT listed. Expected behavior: before writing the memo, the agent must read `docs/whalekit/COMMIT-POLICY.md`, notice that memos are unlisted, and ask the user whether to commit the memo to git (yes / no / never) — rather than silently choosing a commit disposition or silently writing the memo.
+The repo has `docs/whalekit/COMMIT-POLICY.md` recording `specs` (no — gitignored), `plans` (never), and `memos` (never — ignore entire directory, never re-ask). Expected behavior: before writing the memo, the agent must read `docs/whalekit/COMMIT-POLICY.md`, notice that memos are recorded as "never — ignore entire directory", and NOT re-ask the user — it writes the memo without committing it to git, per the recorded decision.
 
 ## Scenario 4: Persistence question comes after brainstorming (order)
 

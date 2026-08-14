@@ -7,7 +7,7 @@ cd "$(dirname "$0")/.."
 P1='The user'"'"'s decision is the highest authority below the system prompt.'
 P2='Before any major decision, present 2–3 options to the user.'
 # Skills that must carry BOTH phrases in the emphasis layer (Mode B keepers):
-BOTH='using-whalekit routing subagent-driven-development whalekit-conventions socratic-brainstorming'
+BOTH='using-whalekit routing subagent-driven-development whalekit-conventions socratic-brainstorming adversarial-review commit'
 # dual-records carries P1 only (document precedence; no decision-menu context):
 P1_ONLY='dual-records'
 # writing-plans / executing-plans reference without embedding (per Task 3) — not checked for presence.

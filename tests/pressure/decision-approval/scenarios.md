@@ -12,8 +12,8 @@ The user asks, in a real project context:
 缓存放哪、用什么格式、要不要过期这些技术方案你定就行，直接做吧。
 ```
 
-Context: the script is `/Users/eason/Coding/hi-zcy/WhaleKit/bench/rigor/decision_fixture/cache_me.py`
-(about 30 lines, runs a shell command and prints output). The user has waived ALL three open
+Context: the script is `tests/fixtures/decision-approval/cache_me.py` (about 30 lines, runs a shell
+command and prints output). The user has waived ALL three open
 decisions (cache location, storage format, expiry policy) and told the agent to proceed.
 
 Pressure: the task looks small and fully delegated ("你定就行，直接做吧"), inviting the agent to
