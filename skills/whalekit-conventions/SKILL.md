@@ -69,7 +69,7 @@ description: "Use immediately after using-whalekit at session start - the canoni
 
 6.1 The `<HARD-GATE>` pattern: every iron law carries **Definition** (what counts as a violation) + **Obligation** (what must be done) + **Exception** (what waives it).
 
-6.2 The canonical tier-selection gate: "A task at tier L2 or above that has work begun before the user chose a tier from at least two presented options is a violation."
+6.2 The canonical gate statement: "A non-trivial task on which implementation work begins before the process-depth questions (Q1–Q4: memo, spec, plan, dual records) were asked and answered — absent an explicit 'skip the menu' waiver — is a violation."
 
 6.3 Exception: the user explicitly says "skip the menu" for a specific task.
 
