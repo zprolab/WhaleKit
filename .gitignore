@@ -1,0 +1,4 @@
+# WhaleKit commit-consent ignore rules
+# Per docs/whalekit/COMMIT-POLICY.md — do not edit directly; update the policy note.
+
+docs/whalekit/specs/2026-08-14-whalekit-design.md
