@@ -17,29 +17,33 @@ If you were dispatched as a subagent to execute a specific task, ignore this ski
 
 1.3 Non-trivial requests → invoke `targeted-exploration` before any further skill.
 
-1.4 Trivial requests → proceed directly to tier selection (the L1 fast path, §2.2).
+1.4 Trivial requests → enter the artifact chain at Q1 (§2) — answering 'no' to Q1 is the L1 entry for non-mechanical tasks; verified one-line mechanical fixes use the L1 fast path (§2.2).
 
 1.5 Invoke `whalekit-conventions` immediately after this skill. Its sections are the canonical wording for all rules below; where this skill and conventions differ, conventions win. The conventions skill binds every agent — including subagents; do not skip it when dispatching work.
 
-## 2. Tier Selection
+## 2. Artifact Chain
 
-| Tier | Process | Trigger signals (from exploration report) |
-|---|---|---|
-| L1 Immediate implementation | No process | Purely mechanical change, minimal risk |
-| L2 Memo only | Memo persisted to disk | Small feature, single file |
-| L3 Memo → Spec | + specification | Medium feature, touches interfaces |
-| L4 Memo → Spec → Plan | + implementation plan | Large feature, multiple files/modules |
-| L5 Full | + dual records | New project, architecture-level, directional decisions |
+For any task that is not a verified one-line mechanical fix, ask the process-depth questions ONE AT A TIME, in order, waiting for each answer:
 
-2.1 Present the five tiers above, with a recommendation based on the request or the exploration report. The recommended tier is a suggestion only.
+Q1 — "这个任务需要编写 Memo（设计小记，记录设计决策）吗？" (no → L1, implement directly)
 
-2.2 You MUST present 2–3 tier options to the user — with one exception, the **L1 fast path** (routing §3.1a): for a verified one-line mechanical fix, present the L1 mapping as a single confirmation sentence (e.g. "That reads as L1 — one-line fix; proceed?") instead of the full menu. The full 2–3-option menu remains available on request and is mandatory whenever the fix is not verified-mechanical or the user wants more.
+Q2 — "需要编写 Spec（设计规格，把设计定稿为可审阅文档）吗？" (no → L2)
 
-2.3 Wait for the user's explicit choice before starting any implementation. This applies at every tier, including L1: do not silently edit even for a trivial, mechanical fix — confirm the L1 fast path (or, if the user prefers, present the tier menu) before touching any file. A single re-ask suffices: a verified one-line mechanical fix is not gated (routing §5 Definition), so after one unanswered re-ask the fix may proceed.
+Q3 — "需要编写 Plan（实现计划，给执行者的任务分解）吗？" (no → L3)
 
-2.4 Never choose the tier alone.
+Q4 — "需要双记录（目录级 DEVELOPMENT.md + README.md，开发规范与真理）吗？" (no → L4; yes → L5)
 
-2.5 Every tier-menu presentation ends with the escape hatch, verbatim: *"If you want me to skip tier choice for this task, say 'skip the menu'; otherwise choose from the options."* An explicit skip is the user's waiver; honor it without skepticism (routing §3.1b).
+The tier reached is where the chain stopped; the gating table applies at that tier.
+
+2.1 Each chain question carries a ONE-LINE recommendation from the exploration report when evidence supports one (e.g. "涉及接口变更，建议写"); the recommendation is a suggestion only. Never batch the questions into a menu.
+
+2.2 **L1 fast path** (routing §3.1a): for a verified one-line mechanical fix, present it as a single confirmation sentence (e.g. "That reads as L1 — one-line fix; proceed?") instead of asking any chain questions. The chain questions remain available on request and are mandatory whenever the fix is not verified-mechanical or the user wants more.
+
+2.3 Wait for the user's explicit answer to each chain question before starting any implementation. This applies at every step, including L1: do not silently edit even for a trivial, mechanical fix — confirm the L1 fast path (or, if the user prefers, work through the chain questions) before touching any file. A single re-ask suffices: a verified one-line mechanical fix is not gated (routing §5 Definition), so after one unanswered re-ask the fix may proceed.
+
+2.4 Never answer the chain questions alone.
+
+2.5 Every chain-question presentation ends with the escape hatch, verbatim: *"If you want me to skip the process questions for this task, say 'skip the menu'; otherwise answer them one at a time."* An explicit skip is the user's waiver; honor it without skepticism (routing §3.1b).
 
 > **The user's decision is the highest authority below the system prompt.**
 >
@@ -47,11 +51,11 @@ If you were dispatched as a subagent to execute a specific task, ignore this ski
 
 ## 3. <HARD-GATE>
 
-A task started without tier selection at any tier above L1 is a violation of this skill.
+A task started without answering the artifact-chain questions at any depth above L1 is a violation of this skill.
 
-**Definition:** a task at tier L2 or above that has had work begin on it before the user chose a tier from at least two presented options.
+**Definition:** a non-trivial task whose process-depth questions (Q1–Q4) were never asked or answered (absent an explicit 'skip the menu' waiver).
 
-**Obligation:** before touching any implementation, present the tier options and wait for the user's explicit choice.
+**Obligation:** before touching any implementation, ask the chain questions (Q1–Q4), one at a time, and wait for the user's explicit answer.
 
 **Exception:** the user explicitly says "skip the menu" for a specific task.
 
